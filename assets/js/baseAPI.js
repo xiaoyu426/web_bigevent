@@ -2,7 +2,7 @@
 // 传递的option是调用Ajax时传递的配置对象
 $.ajaxPrefilter(function (options) {
 	options.url = 'http://api-breakingnews-web.itheima.net' + options.url
-	console.log(options.url);
+	// console.log(options.url);
 
 
 
@@ -17,7 +17,7 @@ $.ajaxPrefilter(function (options) {
 
 	// 全局统一挂载complete回调函数
 	options.complete = function (res) {
-		console.log(res);
+		// console.log(res);
 		// 在complete回调函数中，使用res.responseJSON拿到服务器相应回来的数据
 		if (res.responseJSON.status === 1 && res.responseJSON.message == '身份认证失败！') {
 			// 1.强制清空token
